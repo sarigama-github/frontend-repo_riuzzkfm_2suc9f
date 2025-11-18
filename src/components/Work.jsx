@@ -1,19 +1,19 @@
 export default function Work() {
   const projects = [
     {
-      title: 'Festive Season 2024 — Private Island',
-      image: 'https://images.unsplash.com/photo-1500375592092-40eb2168fd21?q=80&w=1600&auto=format&fit=crop',
-      tags: ['Festive', 'Key Visual', 'Print Suite']
+      title: 'Identity System — Boutique Label',
+      image: 'https://images.unsplash.com/photo-1610623959414-3247ddd3404c?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxJZGVudGl0eSUyMFN5c3RlbSUyMCVFMiU4MCU5NCUyMEJvdXRpcXVlfGVufDB8MHx8fDE3NjM0NTU1OTB8MA&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80',
+      tags: ['Identity', 'Logo', 'Guidelines']
     },
     {
-      title: 'Signature Restaurant — Menu System',
-      image: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1600&auto=format&fit=crop',
-      tags: ['Menu', 'Print', 'Branding']
+      title: 'Editorial — Seasonal Menu & Brochure',
+      image: 'https://images.unsplash.com/photo-1576376259844-d4f848fbaba6?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxFZGl0b3JpYWwlMjAlRTIlODAlOTQlMjBTZWFzb25hbCUyME1lbnV8ZW58MHwwfHx8MTc2MzQ1NTU5MXww&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80',
+      tags: ['Editorial', 'Print', 'Typography']
     },
     {
-      title: 'Valentine at Sea — Romance Campaign',
+      title: 'Campaign Toolkit — Valentine Launch',
       image: 'https://images.unsplash.com/photo-1685199212816-2d0474a7f9c7?ixid=M3w3OTkxMTl8MHwxfHNlYXJjaHwxfHxWYWxlbnRpbmUlMjBhdCUyMFNlYSUyMCVFMiU4MCU5NHxlbnwwfDB8fHwxNzYzNDU1MTQ3fDA&ixlib=rb-4.1.0&w=1600&auto=format&fit=crop&q=80',
-      tags: ['Valentine', 'Campaign', 'Digital']
+      tags: ['Campaign', 'Digital', 'Motion']
     },
   ]
 
@@ -23,7 +23,7 @@ export default function Work() {
         <div className="flex items-end justify-between gap-4">
           <div>
             <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">Selected work</h2>
-            <p className="mt-3 text-slate-700">A glimpse into seasonal suites, menus, and brand systems crafted for luxury resorts.</p>
+            <p className="mt-3 text-slate-700">Identity, editorial, and campaign systems crafted for brands that value design.</p>
           </div>
           <a href="#contact" className="hidden sm:inline-flex items-center rounded-full bg-slate-900 text-white px-4 py-2 text-sm">Request portfolio</a>
         </div>
