@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 export default function Work() {
   const projects = [
     {
@@ -28,10 +30,18 @@ export default function Work() {
           <a href="#contact" className="hidden sm:inline-flex items-center rounded-full bg-slate-900 text-white px-4 py-2 text-sm">Request portfolio</a>
         </div>
         <div className="mt-10 grid md:grid-cols-3 gap-6">
-          {projects.map(p => (
-            <figure key={p.title} className="group rounded-2xl overflow-hidden bg-white shadow ring-1 ring-slate-900/10">
+          {projects.map((p, i) => (
+            <motion.figure
+              key={p.title}
+              initial={{ y: 24, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: i * 0.06 }}
+              className="group rounded-2xl overflow-hidden bg-white shadow ring-1 ring-slate-900/10 relative"
+            >
               <div className="aspect-[4/3] overflow-hidden">
-                <img src={p.image} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={p.image} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition bg-gradient-to-t from-black/50 via-black/0 to-transparent" />
               </div>
               <figcaption className="p-4">
                 <div className="flex flex-wrap gap-2 mb-2">
@@ -41,7 +51,7 @@ export default function Work() {
                 </div>
                 <h3 className="font-semibold text-slate-900">{p.title}</h3>
               </figcaption>
-            </figure>
+            </motion.figure>
           ))}
         </div>
       </div>

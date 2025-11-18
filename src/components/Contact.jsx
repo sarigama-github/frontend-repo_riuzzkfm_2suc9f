@@ -44,19 +44,26 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 bg-white">
+    <section id="contact" className="py-24 bg-white relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 opacity-60">
+        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-fuchsia-500 via-cyan-400 to-amber-400" />
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900">Start a project</h2>
-            <p className="mt-3 text-slate-700 max-w-xl">Tell us about your resort and goals. We’ll respond within one business day with next steps.</p>
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-900">
+              Let’s make something unforgettable
+            </h2>
+            <p className="mt-3 text-slate-700 max-w-xl">
+              Tell us about your studio, product, or idea. We’ll reply within one business day with next steps and a lightweight plan.
+            </p>
             <ul className="mt-6 space-y-2 text-slate-700 text-sm">
-              <li>• Based in Maldives with 12+ years of luxury resort experience</li>
-              <li>• Fast turnarounds for seasonal campaigns and menus</li>
-              <li>• Print-ready and press-managed deliveries</li>
+              <li>• Identity, editorial, and campaign systems</li>
+              <li>• Fast turnarounds for launches and seasons</li>
+              <li>• Motion-led assets for digital and social</li>
             </ul>
           </div>
-          <div className="rounded-2xl border border-slate-200 p-6 bg-slate-50">
+          <div className="rounded-2xl border border-slate-200 p-6 bg-slate-50/80 backdrop-blur">
             {sent ? (
               <div className="p-6 bg-green-50 border border-green-200 rounded-xl text-green-800">
                 Thank you! Your inquiry is in. We’ll get back to you shortly.
@@ -79,7 +86,7 @@ export default function Contact() {
                     <input name="phone" value={form.phone} onChange={handleChange} className="mt-1 w-full rounded-lg border-slate-300 focus:ring-slate-900 focus:border-slate-900" />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700">Resort / Company</label>
+                    <label className="block text-sm font-medium text-slate-700">Studio / Company</label>
                     <input name="resort_or_company" value={form.resort_or_company} onChange={handleChange} className="mt-1 w-full rounded-lg border-slate-300 focus:ring-slate-900 focus:border-slate-900" />
                   </div>
                 </div>
@@ -89,10 +96,10 @@ export default function Contact() {
                     <select name="project_type" value={form.project_type} onChange={handleChange} className="mt-1 w-full rounded-lg border-slate-300 focus:ring-slate-900 focus:border-slate-900">
                       <option>Branding</option>
                       <option>Logo Design</option>
-                      <option>Menu Design</option>
-                      <option>Brochure / Flyer</option>
-                      <option>Seasonal / Festive</option>
+                      <option>Editorial / Print</option>
+                      <option>Campaign</option>
                       <option>Website / Digital</option>
+                      <option>Motion</option>
                       <option>Other</option>
                     </select>
                   </div>
@@ -107,11 +114,11 @@ export default function Contact() {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-slate-700">Project details</label>
-                  <textarea name="message" value={form.message} onChange={handleChange} required rows="5" className="mt-1 w-full rounded-lg border-slate-300 focus:ring-slate-900 focus:border-slate-900" placeholder="Tell us about your resort, audience, scope, and goals" />
+                  <textarea name="message" value={form.message} onChange={handleChange} required rows="5" className="mt-1 w-full rounded-lg border-slate-300 focus:ring-slate-900 focus:border-slate-900" placeholder="What are we creating? Audience, scope, timeline, and goals." />
                 </div>
                 {error && <p className="text-sm text-red-600">{error}</p>}
                 <button disabled={loading} className="inline-flex items-center rounded-full bg-slate-900 text-white px-6 py-3 text-sm font-medium hover:bg-slate-700 transition disabled:opacity-50">
-                  {loading ? 'Sending...' : 'Send inquiry'}
+                  {loading ? 'Sending…' : 'Send inquiry'}
                 </button>
               </form>
             )}

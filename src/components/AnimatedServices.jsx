@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion'
+import { Sparkles, Shapes, PenTool, Play } from 'lucide-react'
 
 const blocks = [
-  { title: 'Brand Identity', desc: 'Logos, typography, color systems, and guidelines.' },
-  { title: 'Campaign Systems', desc: 'Flexible kits for launches, seasons, and events.' },
-  { title: 'Editorial & Print', desc: 'Menus, brochures, posters, and packaging.' },
-  { title: 'Digital & Social', desc: 'Motion-led assets, landing pages, and content.' },
+  { icon: Shapes, title: 'Brand Identity', desc: 'Logos, typography, color systems, and guidelines.' },
+  { icon: PenTool, title: 'Editorial & Print', desc: 'Menus, brochures, posters, and packaging.' },
+  { icon: Sparkles, title: 'Campaign Systems', desc: 'Flexible kits for launches, seasons, and events.' },
+  { icon: Play, title: 'Digital & Motion', desc: 'Motion-led assets, landing pages, and content.' },
 ]
 
 export default function AnimatedServices() {
@@ -25,10 +26,23 @@ export default function AnimatedServices() {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: i * 0.05 }}
-              className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition"
+              className="group p-6 rounded-2xl bg-white border border-slate-200 shadow-sm hover:shadow-lg transition relative overflow-hidden"
             >
-              <h3 className="text-lg font-semibold text-slate-900">{b.title}</h3>
-              <p className="mt-2 text-sm text-slate-600">{b.desc}</p>
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-fuchsia-50 via-rose-50 to-amber-50" />
+              <div className="relative flex items-start gap-4">
+                <div className="p-2 rounded-xl bg-slate-900 text-white">
+                  <b.icon className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-slate-900">{b.title}</h3>
+                  <p className="mt-2 text-sm text-slate-600">{b.desc}</p>
+                </div>
+              </div>
+              <motion.div
+                className="absolute -bottom-10 -right-10 w-32 h-32 rounded-full bg-gradient-to-tr from-fuchsia-400/30 to-amber-400/30 blur-2xl"
+                animate={{ y: [0, -6, 0], x: [0, 6, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+              />
             </motion.div>
           ))}
         </div>
